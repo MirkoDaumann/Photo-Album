@@ -16,7 +16,9 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 ## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+To execute Unit-Tests ones needs to either run `npm run test` or simply just type `jest` into a terminal.
+If you want to see the coverage of those Unit-Tests run `npm run test:coverage` or  `jest --coverage`.
+It creates a coverage folder in the project structure. Navigate to coverage - Icov-report and open `Index.html` in a Browser.
 
 ## Running end-to-end tests
 
