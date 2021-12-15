@@ -1,0 +1,9 @@
+@import "color";
+
+.error-snackbar {
+  background-color: $warn;
+}
+
+.success-snackbar {
+  background-color: $snackbar-success-green;
+}

@@ -1,7 +1,8 @@
 import { Injectable } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
-import { map, Observable } from "rxjs";
-import { environment } from "../environments/environment";
+import { HttpClient, HttpErrorResponse, HttpResponse } from "@angular/common/http";
+import { map, Observable, throwError } from "rxjs";
+
+import { environment } from "../../environments/environment";
 import { UserData } from "../interfaces/user-data";
 import { UserOverviewData } from "../interfaces/user-overview-data";
 

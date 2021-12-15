@@ -6,10 +6,6 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
@@ -25,3 +21,9 @@ It creates a coverage folder in the project structure. Navigate to coverage - Ic
 To run E2E-Tests type `ng e2e` or `npm run cypress:open`. This will open the Electron-Cypress-Application.
 There you can either run all the Tests in the Application or select a single one for Cypress to run.
 If you just want to run the E2E-Tests without having to open the Electron-Cypress-Application just type `npm run cypress:run`.
+
+## Error-handling
+
+Currently this app handles Error's in 2 different way:
+There is a global Service called : `http-interceptor.service.ts`, which catches all HttpError's and throws a Error notification.
+In addition every component, where there is a subscription to an Observable or something similiar can additionally handle the Error's there as shown in `user-overview.component.ts`. 
