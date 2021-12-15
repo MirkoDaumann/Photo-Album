@@ -22,8 +22,6 @@ It creates a coverage folder in the project structure. Navigate to coverage - Ic
 
 ## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+To run E2E-Tests type `ng e2e` or `npm run cypress:open`. This will open the Electron-Cypress-Application.
+There you can either run all the Tests in the Application or select a single one for Cypress to run.
+If you just want to run the E2E-Tests without having to open the Electron-Cypress-Application just type `npm run cypress:run`.

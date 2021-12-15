@@ -85,6 +85,37 @@
           "options": {
             "browserTarget": "Photo-Album:build"
           }
+        },
+        "cypress-run": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "devServerTarget": "Photo-Album:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "Photo-Album:serve:production"
+            }
+          }
+        },
+        "cypress-open": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "watch": true,
+            "headless": false
+          }
+        },
+        "e2e": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "devServerTarget": "Photo-Album:serve",
+            "watch": true,
+            "headless": false
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "Photo-Album:serve:production"
+            }
+          }
         }
       }
     }
