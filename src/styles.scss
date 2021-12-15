@@ -1,10 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
+@import "color";
+@import "flex";
+@import "header";
 
 html, body {
+  font-size: 16px;
   height: 100%;
 }
 
 body {
+  color: $white;
   font-family: Roboto, "Helvetica Neue", sans-serif;
-  margin: 0;
+  margin: auto;
+  width: 1200px;
 }
