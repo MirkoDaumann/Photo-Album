@@ -36,4 +36,4 @@ If you just want to run the E2E-Tests without having to open the Electron-Cypres
 
 Currently this app handles Error's in 2 different way:
 There is a global Service called : `http-interceptor.service.ts`, which catches all HttpError's and throws a Error notification.
-In addition every component, where there is a subscription to an Observable or something similiar can additionally handle the Error's there as shown in `user-overview.component.ts`. 
+In addition every component, where there is a subscription to an Observable or something similiar can additionally handle the Error's there as shown in `app.component.ts`. 
