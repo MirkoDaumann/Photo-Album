@@ -21,13 +21,22 @@
   margin-bottom: 1rem;
 }
 
-.album-card-wrapper {
+.card-margin {
   margin: 1rem;
+}
+
+.album-card-wrapper {
+  @extend .card-margin;
+
+  &:hover {
+    border: 1px solid $black;
+    cursor: pointer;
+  }
 }
 
 .grid-view {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 250px);
+  grid-template-columns: repeat(auto-fill, 260px);
   justify-content: space-between;
   grid-gap: 20px;
 }

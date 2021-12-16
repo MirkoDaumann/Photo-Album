@@ -1,6 +1,7 @@
 <mat-card>
   <div class="header-bar">
-    <button color="primary" mat-flat-button (click)="reload()"> Reload</button>
+    <button mat-icon-button color="primary" aria-label="back to userOverview" title="back to userOverview" (click)="navigateToUserOverview()"><mat-icon>keyboard_backspace</mat-icon></button>
+    <button color="primary" mat-flat-button (click)="reload()" [disabled]="isReloading"> Reload</button>
   </div>
   <ng-container *ngFor="let photoAlbum of photoAlbums; let i = index">
     <div class="user">
@@ -16,7 +17,7 @@
             </div>
           </mat-card>
         </ng-container>
-        <mat-card class="album-card-wrapper">
+        <mat-card class="card-margin">
           <div class="flex-space-between flex-column album-card">
             <button mat-flat-button color="primary" (click)="createAlbum(photoAlbum.userId, i)" [disabled]="!albumNames[i]">Add new Album</button>
             <input matInput type="text" [(ngModel)]="albumNames[i]" placeholder="Album-Name"/>

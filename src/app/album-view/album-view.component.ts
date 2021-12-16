@@ -18,6 +18,7 @@ export class AlbumViewComponent implements OnInit {
   public photoAlbums: UserPhotoAlbum[] = [];
   public selectedRows: UserOverviewData[] = [];
   public albumNames: string[] = [];
+  public isReloading = false;
 
   constructor(private readonly albumService: AlbumService,
               private readonly userDataService: UserDataService,
@@ -47,7 +48,12 @@ export class AlbumViewComponent implements OnInit {
     });
   }
 
+  public navigateToUserOverview(): void {
+    this.router.navigate(['/userOverview']);
+  }
+
   private filterAlbums(albums: PhotoAlbum[]): void {
+    this.photoAlbums = [];
     this.selectedRows.forEach((row: UserOverviewData) => {
       const foundItems = albums.filter((album: PhotoAlbum) => album.userId === row.id)
       this.photoAlbums = [...this.photoAlbums, { name: row.name, albums: foundItems, userId: row.id }];
@@ -55,8 +61,12 @@ export class AlbumViewComponent implements OnInit {
   }
 
   private getPhotoAlbums(): void {
+    this.isReloading = true;
     this.albumService.getPhotoAlbums().pipe(take(1)).subscribe((albums: PhotoAlbum[]) => {
       this.filterAlbums(albums);
+      this.isReloading = false;
+    }, () => {
+      this.isReloading = false;
     });
   }
 }
