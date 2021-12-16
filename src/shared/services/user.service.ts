@@ -19,7 +19,7 @@ export class UserService {
       const userOverviewData: UserOverviewData[] = [];
 
       apiData.forEach((userData: UserData) => {
-        userOverviewData.push({ name: userData.name, address: userData.address })
+        userOverviewData.push({ name: userData.name, address: userData.address, id: userData.id })
       });
 
       return userOverviewData;
