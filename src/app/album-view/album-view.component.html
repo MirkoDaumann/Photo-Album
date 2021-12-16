@@ -2,10 +2,12 @@
   <div class="header-bar">
     <button color="primary" mat-flat-button (click)="reload()"> Reload</button>
   </div>
-  <ng-container *ngFor="let photoAlbum of photoAlbums">
+  <ng-container *ngFor="let photoAlbum of photoAlbums; let i = index">
     <div class="user">
-      <mat-card-title>{{photoAlbum.name}}</mat-card-title>
-      <div class="flex-space-between wrap">
+      <div class="flex-space-between">
+        <mat-card-title>{{photoAlbum.name}}</mat-card-title>
+      </div>
+      <div class="grid-view">
         <ng-container *ngFor="let albums of photoAlbum.albums">
           <mat-card class="album-card-wrapper">
             <div class="flex-space-between flex-column album-card">
@@ -14,7 +16,13 @@
             </div>
           </mat-card>
         </ng-container>
-        <div></div>
+        <mat-card class="album-card-wrapper">
+          <div class="flex-space-between flex-column album-card">
+            <button mat-flat-button color="primary" (click)="createAlbum(photoAlbum.userId, i)" [disabled]="!albumNames[i]">Add new Album</button>
+            <input matInput type="text" [(ngModel)]="albumNames[i]" placeholder="Album-Name"/>
+            <mat-card-subtitle></mat-card-subtitle>
+          </div>
+        </mat-card>
       </div>
     </div>
   </ng-container>

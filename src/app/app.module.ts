@@ -7,6 +7,9 @@ import { MatCheckboxModule } from "@angular/material/checkbox";
 import { MatTableModule } from "@angular/material/table";
 import { MatButtonModule } from "@angular/material/button";
 import { MatDividerModule } from "@angular/material/divider";
+import { MatIconModule } from "@angular/material/icon";
+import { MatInputModule } from "@angular/material/input";
+import { FormsModule } from "@angular/forms";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -36,6 +39,9 @@ import { AlbumViewComponent } from './album-view/album-view.component';
     MatTableModule,
     MatButtonModule,
     MatDividerModule,
+    MatIconModule,
+    MatInputModule,
+    FormsModule,
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

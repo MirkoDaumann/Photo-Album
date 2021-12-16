@@ -14,4 +14,8 @@ export class AlbumService {
   public getPhotoAlbums(): Observable<any> {
     return this.httpClient.get(`${ this.baseUrl }/albums`);
   }
+
+  public createPhotoAlbum(userId: number, name: string): Observable<any> {
+    return this.httpClient.post(`${this.baseUrl}/albums`, {userId, name});
+  }
 }

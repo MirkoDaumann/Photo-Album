@@ -24,3 +24,10 @@
 .album-card-wrapper {
   margin: 1rem;
 }
+
+.grid-view {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 250px);
+  justify-content: space-between;
+  grid-gap: 20px;
+}
