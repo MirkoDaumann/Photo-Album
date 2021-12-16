@@ -37,13 +37,8 @@ export class UserOverviewComponent implements OnInit, OnDestroy {
   }
 
   public navigateToAlbumView(): void {
-    const userIDs: number[] = [];
-
-    this.selection.selected.forEach((row: UserOverviewData) => {
-      userIDs.push(row.id);
-    })
-
-    this.router.navigate(['/albumView', {ids: userIDs}]);
+    this.userDataService.setSelectedTableRows$(this.selection.selected);
+    this.router.navigate(['/albumView']);
   }
 
   public isAllSelected(): boolean {
