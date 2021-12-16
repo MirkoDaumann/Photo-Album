@@ -5,6 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from "@angular/material/card";
 import { MatCheckboxModule } from "@angular/material/checkbox";
 import { MatTableModule } from "@angular/material/table";
+import { MatButtonModule } from "@angular/material/button";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +14,7 @@ import { HeaderComponent } from './header/header.component';
 import { HttpInterceptorService } from "../shared/services/http-interceptor.service";
 import { SnackbarModule } from "../shared/components/snackbar.module";
 import { UserAddressPipe } from "../shared/pipes/user-address.pipe";
+import { AlbumViewComponent } from './album-view/album-view.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,7 @@ import { UserAddressPipe } from "../shared/pipes/user-address.pipe";
     UserOverviewComponent,
     HeaderComponent,
     UserAddressPipe,
+    AlbumViewComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,6 +33,7 @@ import { UserAddressPipe } from "../shared/pipes/user-address.pipe";
     MatCardModule,
     MatCheckboxModule,
     MatTableModule,
+    MatButtonModule,
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

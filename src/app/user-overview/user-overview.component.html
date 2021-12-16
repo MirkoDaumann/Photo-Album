@@ -1,4 +1,7 @@
 <mat-card>
+  <div>
+    <button color="primary" mat-flat-button [disabled]="!selection.hasValue()" routerLink="/albumView">View Photo-Album</button>
+  </div>
   <table *ngIf="dataSource" mat-table [dataSource]="dataSource">
 
     <ng-container matColumnDef="select">

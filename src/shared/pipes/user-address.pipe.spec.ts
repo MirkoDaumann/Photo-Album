@@ -15,7 +15,7 @@ describe("UserAddressPipe", () => {
         street: "Uniplatz 15",
         suite: "7",
         geo: { lat: "123", lng: "345" }
-      }
+      };
 
       const pipe = new UserAddressPipe();
 
@@ -29,7 +29,7 @@ describe("UserAddressPipe", () => {
         street: "Uniplatz 15",
         suite: "7",
         geo: { lat: "123", lng: "345" }
-      }
+      };
 
       const pipe = new UserAddressPipe();
 
