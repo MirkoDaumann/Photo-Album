@@ -1,0 +1,26 @@
+@import "color";
+
+.album-card {
+  min-width: 10rem;
+  max-width: 10rem;
+  min-height: 160px;
+  padding: 1rem;
+}
+
+.album {
+  border: 1px dashed $black;
+  min-height: 4rem;
+  min-width: 2rem;
+}
+
+.user {
+  margin-bottom: 2rem;
+}
+
+.header-bar {
+  margin-bottom: 1rem;
+}
+
+.album-card-wrapper {
+  margin: 1rem;
+}

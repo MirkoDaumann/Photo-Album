@@ -6,6 +6,7 @@ import { MatCardModule } from "@angular/material/card";
 import { MatCheckboxModule } from "@angular/material/checkbox";
 import { MatTableModule } from "@angular/material/table";
 import { MatButtonModule } from "@angular/material/button";
+import { MatDividerModule } from "@angular/material/divider";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -34,6 +35,7 @@ import { AlbumViewComponent } from './album-view/album-view.component';
     MatCheckboxModule,
     MatTableModule,
     MatButtonModule,
+    MatDividerModule,
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

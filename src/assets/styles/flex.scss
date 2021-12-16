@@ -2,7 +2,20 @@
   display: flex;
 }
 
+.wrap {
+  flex-wrap: wrap;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
 .flex-center {
   @extend .flex;
   justify-content: center;
+}
+
+.flex-space-between {
+  @extend .flex;
+  justify-content: space-between;
 }

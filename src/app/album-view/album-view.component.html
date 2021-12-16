@@ -1,1 +1,21 @@
-<p>album-view works!</p>
+<mat-card>
+  <div class="header-bar">
+    <button color="primary" mat-flat-button (click)="reload()"> Reload</button>
+  </div>
+  <ng-container *ngFor="let photoAlbum of photoAlbums">
+    <div class="user">
+      <mat-card-title>{{photoAlbum.name}}</mat-card-title>
+      <div class="flex-space-between wrap">
+        <ng-container *ngFor="let albums of photoAlbum.albums">
+          <mat-card class="album-card-wrapper">
+            <div class="flex-space-between flex-column album-card">
+              <div class="album"></div>
+              <mat-card-subtitle>{{albums.title}}</mat-card-subtitle>
+            </div>
+          </mat-card>
+        </ng-container>
+        <div></div>
+      </div>
+    </div>
+  </ng-container>
+</mat-card>
