@@ -19,6 +19,7 @@ import { HttpInterceptorService } from "../shared/services/http-interceptor.serv
 import { SnackbarModule } from "../shared/components/snackbar.module";
 import { UserAddressPipe } from "../shared/pipes/user-address.pipe";
 import { AlbumViewComponent } from './album-view/album-view.component';
+import { PhotoViewComponent } from './photo-view/photo-view.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { AlbumViewComponent } from './album-view/album-view.component';
     HeaderComponent,
     UserAddressPipe,
     AlbumViewComponent,
+    PhotoViewComponent,
   ],
   imports: [
     BrowserModule,
