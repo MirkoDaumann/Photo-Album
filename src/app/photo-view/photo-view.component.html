@@ -1,5 +1,8 @@
 <mat-card>
   <pa-view-button-bar routerUrl="albumView" (isReloading$)="reload()"></pa-view-button-bar>
 
-<p>photo-view works!</p>
+  <mat-card-title>{{photos[0]?.albumName}}</mat-card-title>
+  <ng-container *ngFor="let photo of photos">
+    <img [src]="photo.photoMetadata.thumbnailUrl" [alt]="photo.photoMetadata.title" [title]="photo.photoMetadata.title">
+  </ng-container>
 </mat-card>

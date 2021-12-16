@@ -11,10 +11,11 @@ export class AlbumViewService {
   constructor(private httpClient: HttpClient) {
   }
 
-  public getPhotoAlbums(): Observable<any> {
-    return this.httpClient.get(`${ this.baseUrl }/albums`);
+  public getPhotoAlbums(): Observable<PhotoAlbum[]> {
+    return this.httpClient.get(`${ this.baseUrl }/albums`) as Observable<PhotoAlbum[]>;
   }
 
+  // Does not really exist, so no type
   public createPhotoAlbum(userId: number, name: string): Observable<any> {
     return this.httpClient.post(`${this.baseUrl}/albums`, {userId, name});
   }

@@ -7,7 +7,7 @@
       </div>
       <div class="grid-view">
         <ng-container *ngFor="let albums of photoAlbum.albums">
-          <mat-card class="album-card-wrapper" (click)="navigateTo('photoView')">
+          <mat-card class="album-card-wrapper" (click)="navigateTo('photoView', albums)">
             <div class="flex-space-between flex-column album-card">
               <div class="album"></div>
               <mat-card-subtitle>{{albums.title}}</mat-card-subtitle>

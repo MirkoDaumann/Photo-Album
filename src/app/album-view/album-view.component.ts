@@ -8,6 +8,7 @@ import { UserOverviewData } from "../../shared/interfaces/user-overview-data";
 import { UserPhotoAlbum } from "../../shared/interfaces/user-photo-album";
 import { Router } from "@angular/router";
 import { ApplicationRoutes } from "../../shared/interfaces/application-routes";
+import { AlbumInformation } from "../../shared/interfaces/album-information";
 
 @Component({
   selector: 'pa-album-view',
@@ -41,8 +42,12 @@ export class AlbumViewComponent implements OnInit {
     this.getPhotoAlbums();
   }
 
-  public navigateTo(route: ApplicationRoutes): void {
-    this.router.navigate([`${route}`]);
+  public navigateTo(route: ApplicationRoutes, selectedAlbum?: PhotoAlbum): void {
+    if (route === "photoView" && selectedAlbum) {
+      this.setSelectedPhotoAlbum(selectedAlbum);
+    }
+
+    this.router.navigate([`${ route }`]);
   }
 
   public createAlbum(userId: number, index: number): void {
@@ -51,6 +56,10 @@ export class AlbumViewComponent implements OnInit {
     }, () => {
       console.error('Could not create a Album');
     });
+  }
+
+  private setSelectedPhotoAlbum(selectedAlbum: PhotoAlbum): void {
+      this.userDataService.setSelectedPhotoAlbum$({ id: selectedAlbum?.id, title: selectedAlbum?.title });
   }
 
   private filterAlbums(albums: PhotoAlbum[]): void {
