@@ -16,6 +16,16 @@ To execute Unit-Tests ones needs to either run `npm run test` or simply just typ
 If you want to see the coverage of those Unit-Tests run `npm run test:coverage` or  `jest --coverage`.
 It creates a coverage folder in the project structure. Navigate to coverage - Icov-report and open `Index.html` in a Browser.
 
+Typicly I would mock all child components from a component i want to Test with `ng-mocks (npm i ng-mocks)`.
+
+` Example from the AppComponent
+declarations: [AppComponent, HeaderComponent, UserOverviewComponent],
+would turn into [AppComponent, MockComponents(HeaderComponent, UserOverviewComponent)]
+`
+This has a big adventage that all other child dependencies would be gone too (Services imports etc).
+
+But currently there is an issue with this Library (https://github.com/ike18t/ng-mocks/issues/1427);
+
 ## Running end-to-end tests
 
 To run E2E-Tests type `ng e2e` or `npm run cypress:open`. This will open the Electron-Cypress-Application.
