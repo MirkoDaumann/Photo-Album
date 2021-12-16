@@ -22,5 +22,4 @@ export class AppComponent implements OnInit {
       // Every Component could Error-handle it's self here too.
     })
   }
-
 }

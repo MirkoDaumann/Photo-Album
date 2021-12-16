@@ -6,6 +6,7 @@ import { PhotoAlbum } from "../../shared/interfaces/photo-album";
 import { UserDataService } from "../../shared/services/user-data.service";
 import { UserOverviewData } from "../../shared/interfaces/user-overview-data";
 import { UserPhotoAlbum } from "../../shared/interfaces/user-photo-album";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'pa-album-view',
@@ -18,11 +19,15 @@ export class AlbumViewComponent implements OnInit {
   public selectedRows: UserOverviewData[] = [];
 
   constructor(private readonly albumService: AlbumService,
-              private readonly userDataService: UserDataService) {
+              private readonly userDataService: UserDataService,
+              private readonly router: Router) {
   }
 
   public ngOnInit(): void {
     this.userDataService.getSelectedTableRows$().pipe(take(1)).subscribe((selectedRows: UserOverviewData[]) => {
+      if (!selectedRows.length) {
+        this.router.navigate(["/userOverview"])
+      }
       this.selectedRows = selectedRows;
     });
 
