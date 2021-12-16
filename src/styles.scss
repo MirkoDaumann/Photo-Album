@@ -11,5 +11,10 @@ html, body {
 body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
   margin: auto;
-  width: 1200px;
+  max-width: 1200px;
+}
+
+main {
+  background-color: $application-background;
+  padding: 1.25rem;
 }
