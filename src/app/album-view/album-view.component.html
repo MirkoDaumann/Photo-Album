@@ -1,8 +1,5 @@
 <mat-card>
-  <div class="header-bar">
-    <button mat-icon-button color="primary" aria-label="back to userOverview" title="back to userOverview" (click)="navigateToUserOverview()"><mat-icon>keyboard_backspace</mat-icon></button>
-    <button color="primary" mat-flat-button (click)="reload()" [disabled]="isReloading"> Reload</button>
-  </div>
+  <pa-view-button-bar routerUrl="userOverview" (isReloading$)="reload()"></pa-view-button-bar>
   <ng-container *ngFor="let photoAlbum of photoAlbums; let i = index">
     <div class="user">
       <div class="flex-space-between">
@@ -10,7 +7,7 @@
       </div>
       <div class="grid-view">
         <ng-container *ngFor="let albums of photoAlbum.albums">
-          <mat-card class="album-card-wrapper">
+          <mat-card class="album-card-wrapper" (click)="navigateTo('photoView')">
             <div class="flex-space-between flex-column album-card">
               <div class="album"></div>
               <mat-card-subtitle>{{albums.title}}</mat-card-subtitle>

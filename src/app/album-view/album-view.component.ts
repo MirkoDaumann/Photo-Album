@@ -7,6 +7,7 @@ import { UserDataService } from "../../shared/services/user-data.service";
 import { UserOverviewData } from "../../shared/interfaces/user-overview-data";
 import { UserPhotoAlbum } from "../../shared/interfaces/user-photo-album";
 import { Router } from "@angular/router";
+import { ApplicationRoutes } from "../../shared/interfaces/application-routes";
 
 @Component({
   selector: 'pa-album-view',
@@ -28,7 +29,7 @@ export class AlbumViewComponent implements OnInit {
   public ngOnInit(): void {
     this.userDataService.getSelectedTableRows$().pipe(take(1)).subscribe((selectedRows: UserOverviewData[]) => {
       if (!selectedRows.length) {
-        this.router.navigate(["/userOverview"])
+        this.router.navigate(["/userOverview"]);
       }
       this.selectedRows = selectedRows;
     });
@@ -40,16 +41,16 @@ export class AlbumViewComponent implements OnInit {
     this.getPhotoAlbums();
   }
 
+  public navigateTo(route: ApplicationRoutes): void {
+    this.router.navigate([`${route}`]);
+  }
+
   public createAlbum(userId: number, index: number): void {
     this.albumService.createPhotoAlbum(userId, this.albumNames[index]).subscribe(() => {
       // get the new Photo-Album back and add it to this.photoAlbums
     }, () => {
       console.error('Could not create a Album');
     });
-  }
-
-  public navigateToUserOverview(): void {
-    this.router.navigate(['/userOverview']);
   }
 
   private filterAlbums(albums: PhotoAlbum[]): void {

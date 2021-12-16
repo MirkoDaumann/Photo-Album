@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { MatSnackBar } from "@angular/material/snack-bar";
 
 import { SnackbarComponent } from "./snackbar.component";
-import { PanelClass } from "../interfaces/panel-class";
+import { PanelClass } from "../../interfaces/panel-class";
 
 @Injectable()
 export class SnackbarService {

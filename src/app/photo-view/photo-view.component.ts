@@ -6,4 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./photo-view.component.scss']
 })
 export class PhotoViewComponent {
+  public reload(): void {
+  }
 }

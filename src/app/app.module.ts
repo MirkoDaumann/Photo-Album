@@ -16,10 +16,11 @@ import { AppComponent } from './app.component';
 import { UserOverviewComponent } from './user-overview/user-overview.component';
 import { HeaderComponent } from './header/header.component';
 import { HttpInterceptorService } from "../shared/services/http-interceptor.service";
-import { SnackbarModule } from "../shared/components/snackbar.module";
+import { SnackbarModule } from "../shared/components/snackbar/snackbar.module";
 import { UserAddressPipe } from "../shared/pipes/user-address.pipe";
 import { AlbumViewComponent } from './album-view/album-view.component';
 import { PhotoViewComponent } from './photo-view/photo-view.component';
+import { ViewButtonBarModule } from "../shared/components/view-button-bar/view-button-bar.module";
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { PhotoViewComponent } from './photo-view/photo-view.component';
     MatIconModule,
     MatInputModule,
     FormsModule,
+    ViewButtonBarModule,
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

@@ -8,7 +8,7 @@ import {
 } from "@angular/common/http";
 import { Observable, throwError } from "rxjs";
 import { catchError } from "rxjs/operators";
-import { SnackbarService } from "../components/snackbar.service";
+import { SnackbarService } from "../components/snackbar/snackbar.service";
 
 @Injectable()
 export class HttpInterceptorService implements HttpInterceptor {
