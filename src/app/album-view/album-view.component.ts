@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { take } from "rxjs/operators";
 
-import { AlbumService } from "../../shared/services/album.service";
+import { AlbumViewService } from "./album-view.service";
 import { PhotoAlbum } from "../../shared/interfaces/photo-album";
 import { UserDataService } from "../../shared/services/user-data.service";
 import { UserOverviewData } from "../../shared/interfaces/user-overview-data";
@@ -21,7 +21,7 @@ export class AlbumViewComponent implements OnInit {
   public albumNames: string[] = [];
   public isReloading = false;
 
-  constructor(private readonly albumService: AlbumService,
+  constructor(private readonly albumService: AlbumViewService,
               private readonly userDataService: UserDataService,
               private readonly router: Router) {
   }

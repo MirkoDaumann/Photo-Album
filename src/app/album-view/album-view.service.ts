@@ -2,10 +2,10 @@ import { Injectable } from "@angular/core";
 import { environment } from "../../environments/environment";
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
-import { PhotoAlbum } from "../interfaces/photo-album";
+import { PhotoAlbum } from "../../shared/interfaces/photo-album";
 
 @Injectable({ providedIn: "root" })
-export class AlbumService {
+export class AlbumViewService {
   public baseUrl: string = environment.baseUrl;
 
   constructor(private httpClient: HttpClient) {
