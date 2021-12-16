@@ -2,6 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule } from "@angular/common/http/testing";
 
 import { UserOverviewComponent } from './user-overview.component';
+import { MatCardModule } from "@angular/material/card";
 
 describe('UserOverviewComponent', () => {
   let component: UserOverviewComponent;
@@ -10,7 +11,7 @@ describe('UserOverviewComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [UserOverviewComponent],
-      imports: [HttpClientTestingModule],
+      imports: [HttpClientTestingModule, MatCardModule],
     })
       .compileComponents();
   });
