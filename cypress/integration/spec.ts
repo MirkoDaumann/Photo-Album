@@ -36,5 +36,8 @@ describe('Routing', () => {
 
     cy.clickButton('keyboard_backspace');
     cy.urlContains('/albumView');
+
+    cy.reload();
+    cy.urlContains('/userOverview');
   });
 });
