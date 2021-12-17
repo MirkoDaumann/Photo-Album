@@ -32,6 +32,8 @@ To run E2E-Tests type `ng e2e` or `npm run cypress:open`. This will open the Ele
 There you can either run all the Tests in the Application or select a single one for Cypress to run.
 If you just want to run the E2E-Tests without having to open the Electron-Cypress-Application just type `npm run cypress:run`.
 
+There are currently 3 working E2E Tests. They are found under `./cypress/integration/**`.
+
 ## Error-handling
 
 Currently this app handles Error's in 2 different way:

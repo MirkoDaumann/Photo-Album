@@ -41,3 +41,11 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
+
+Cypress.Commands.add('clickButton', (buttonName: string) => {
+  cy.contains('button', buttonName).click();
+});
+
+Cypress.Commands.add('urlContains', (url: string) => {
+  cy.url().should('include', url);
+});
