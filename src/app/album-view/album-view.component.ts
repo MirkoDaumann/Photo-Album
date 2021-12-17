@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { take } from "rxjs/operators";
+import { Router } from "@angular/router";
 
 import { AlbumViewService } from "./album-view.service";
 import { PhotoAlbum } from "../../shared/interfaces/photo-album";
 import { UserDataService } from "../../shared/services/user-data.service";
 import { UserOverviewData } from "../../shared/interfaces/user-overview-data";
 import { UserPhotoAlbum } from "../../shared/interfaces/user-photo-album";
-import { Router } from "@angular/router";
 import { ApplicationRoutes } from "../../shared/interfaces/application-routes";
 import { AlbumInformation } from "../../shared/interfaces/album-information";
 
@@ -20,7 +20,6 @@ export class AlbumViewComponent implements OnInit {
   public photoAlbums: UserPhotoAlbum[] = [];
   public selectedRows: UserOverviewData[] = [];
   public albumNames: string[] = [];
-  public isReloading = false;
 
   constructor(private readonly albumService: AlbumViewService,
               private readonly userDataService: UserDataService,
@@ -59,24 +58,20 @@ export class AlbumViewComponent implements OnInit {
   }
 
   private setSelectedPhotoAlbum(selectedAlbum: PhotoAlbum): void {
-      this.userDataService.setSelectedPhotoAlbum$({ id: selectedAlbum?.id, title: selectedAlbum?.title });
+    this.userDataService.setSelectedPhotoAlbum$({ id: selectedAlbum?.id, title: selectedAlbum?.title });
   }
 
   private filterAlbums(albums: PhotoAlbum[]): void {
     this.photoAlbums = [];
     this.selectedRows.forEach((row: UserOverviewData) => {
-      const foundItems = albums.filter((album: PhotoAlbum) => album.userId === row.id)
+      const foundItems = albums.filter((album: PhotoAlbum) => album.userId === row.id);
       this.photoAlbums = [...this.photoAlbums, { name: row.name, albums: foundItems, userId: row.id }];
-    })
+    });
   }
 
   private getPhotoAlbums(): void {
-    this.isReloading = true;
     this.albumService.getPhotoAlbums().pipe(take(1)).subscribe((albums: PhotoAlbum[]) => {
       this.filterAlbums(albums);
-      this.isReloading = false;
-    }, () => {
-      this.isReloading = false;
     });
   }
 }

@@ -32,7 +32,7 @@
 
 .grid-view {
   display: grid;
+  grid-gap: 20px;
   grid-template-columns: repeat(auto-fill, 260px);
   justify-content: space-between;
-  grid-gap: 20px;
 }
