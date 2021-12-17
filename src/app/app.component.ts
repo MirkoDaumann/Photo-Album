@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { take } from "rxjs/operators";
-import { UserOverviewData } from "../shared/interfaces/user-overview-data";
 import { MatTableDataSource } from "@angular/material/table";
+
+import { UserOverviewData } from "../shared/interfaces/user-overview-data";
 import { UserService } from "../shared/services/user.service";
 import { UserDataService } from "../shared/services/user-data.service";
 

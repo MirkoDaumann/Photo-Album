@@ -3,10 +3,10 @@ import { take, takeUntil } from "rxjs/operators";
 import { SelectionModel } from "@angular/cdk/collections";
 import { MatTableDataSource } from "@angular/material/table";
 import { Router } from "@angular/router";
+import { Subject } from "rxjs";
 
 import { UserOverviewData } from "../../shared/interfaces/user-overview-data";
 import { UserDataService } from "../../shared/services/user-data.service";
-import { Subject } from "rxjs";
 
 @Component({
   selector: 'pa-user-overview',
@@ -25,6 +25,7 @@ export class UserOverviewComponent implements OnInit, OnDestroy {
   }
 
   public ngOnInit(): void {
+    // Could be used to periodicly update the Users. That's why tankUntil
     this.userDataService.getUserData$().pipe(takeUntil(this.destroy$)).subscribe((userData: UserOverviewData[]) => {
       this.dataSource = new MatTableDataSource<UserOverviewData>(userData);
       this.userOverviewData = userData;

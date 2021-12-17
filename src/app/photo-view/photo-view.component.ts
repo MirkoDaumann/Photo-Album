@@ -13,7 +13,6 @@ import { PhotoViewData } from "../../shared/interfaces/photo-view-data";
 @Component({
   selector: 'pa-photo-view',
   templateUrl: './photo-view.component.html',
-  styleUrls: ['./photo-view.component.scss']
 })
 export class PhotoViewComponent implements OnInit {
   public photos: PhotoViewData[] = [];
