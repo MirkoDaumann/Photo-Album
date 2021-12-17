@@ -1,8 +1,11 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule } from "@angular/common/http/testing";
+import { MatCardModule } from "@angular/material/card";
+import { RouterTestingModule } from "@angular/router/testing";
+import { MatTableModule } from "@angular/material/table";
+import { MatCheckboxModule } from "@angular/material/checkbox";
 
 import { UserOverviewComponent } from './user-overview.component';
-import { MatCardModule } from "@angular/material/card";
 
 describe('UserOverviewComponent', () => {
   let component: UserOverviewComponent;
@@ -11,7 +14,13 @@ describe('UserOverviewComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [UserOverviewComponent],
-      imports: [HttpClientTestingModule, MatCardModule],
+      imports: [
+        HttpClientTestingModule,
+        MatCardModule,
+        RouterTestingModule,
+        MatTableModule,
+        MatCheckboxModule,
+      ],
     })
       .compileComponents();
   });
