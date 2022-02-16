@@ -21,8 +21,7 @@ describe('UserOverviewComponent', () => {
         MatTableModule,
         MatCheckboxModule,
       ],
-    })
-      .compileComponents();
+    }).compileComponents();
   });
 
   beforeEach(() => {

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'pa-header',
@@ -6,4 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
+  public title: string = "Photo Album";
+
+  public changeTitle(): void {
+    this.title = this.title === "Photo Album" ? "Easter Egg" : "Photo Album";
+  }
 }
+

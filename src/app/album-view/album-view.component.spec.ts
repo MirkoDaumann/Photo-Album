@@ -77,14 +77,6 @@ describe('AlbumViewComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  /* In my Unittests i give every function its own describe with the it/test below testing different parts of the functionality.
-  *  For this there is a happy path, which is also needed to run the whole rest of the test. So i provide a global jest mock of the return value.
-  *  That means in the NgOnInit function i can test if the photoAlbum was correctly filled.
-  *  For the negativ path, which doesnt trigger, because of the global mock, i override the global mock with a jest spy to return an empty BehaviorSubject.
-  *  Then i mock the AngularRouter and spy on it to.
-  *  In the end i just want to know if the navigate function was triggered. So a counter expect is enough.
-  *  Coverage shows, that both paths have been taken.
-  *  */
   describe('NgOnInit()', () => {
     it('should navigate if no selectedRow was found', () => {
       jest.spyOn(userDataService, 'getSelectedTableRows$').mockReturnValueOnce(new BehaviorSubject([] as UserOverviewData[]));

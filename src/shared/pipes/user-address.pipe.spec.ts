@@ -18,7 +18,6 @@ describe("UserAddressPipe", () => {
       };
 
       const pipe = new UserAddressPipe();
-
       const result = pipe.transform(address);
 
       expect(result).toEqual("Uniplatz 15 39106 Magdeburg App: 7");
